@@ -78,7 +78,7 @@ proc main(loginURL:string,tokenName:string,postData:string,uname:string,pword:st
     page2  = split($fetch.headers, "\"set-cookie\": @[\"")[1]
     cookie = split(page2, "; ")[0]
   var
-    inputData    = postData.replace("^USER^", uname).replace("^PASS^", encodeUrl(pword)) & "&" & tokenName & "=" & token
+    inputData    = postData.replace("^USER^", encodeUrl(uname)).replace("^PASS^", encodeUrl(pword)) & "&" & tokenName & "=" & token
     cookieHeader = newHttpHeaders({"Cookie": cookie})
     response     = http.request(loginURL & "?" & inputData, httpMethod = HttpPost, headers = cookieHeader) # Try password
   echo("  --> " & pword)
