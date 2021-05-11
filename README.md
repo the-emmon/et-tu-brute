@@ -15,11 +15,18 @@ Here's an example with the values filled in:
 ```
 The tool will automatically try to grab cookies from the login page as well. It was developed for a single PHPSESSID cookie, so multiple cookies set on the token grab might break that functionality; I'll need to test it against login pages that set multiple cookies to see how it performs.
 ## Compiling
-I've provided a compiled amd64 binary. If you'd like to compile the tool yourself, run the following:
+Check releases for compiled binaries. If you'd like to compile the tool yourself, run the following:
+#### LINUX
 ```
 git clone https://github.com/the-emmon/et-tu-brute
 cd et-tu-brute
 nim c --threads:on --opt:speed --app:console --gc:boehm -d:release ettubrute.nim
+```
+#### WINDOWS (cross-compile)
+```
+git clone https://github.com/the-emmon/et-tu-brute
+cd et-tu-brute
+nim c --threads:on --opt:speed --app:console -d:mingw --cpu:i386 --gc:boehm -d:release ettubrute.nim
 ```
 Be sure to compile with the options listed to avoid glitches and "illegal filesystem access" crashes.
 
@@ -29,3 +36,5 @@ strip ettubrute && upx --best --strip-relocs=0 ettubrute
 ``` 
 ## Ideas?
 Open an issue or a pull request if you'd like a feature implemented!
+## Credits
+This tool utilizes Alex Boisvert's Nim port of Daniel Lemire's `avxcount` fast file newline counter.
