@@ -4,7 +4,7 @@ Unhappy with the slowness of available Python token-fetching bruteforcers, I cre
 
 Tested against a Proving Grounds machine with a CSRF-protected web portal, et-tu-brute clocked ~120,000 password attempts in 9 minutes. Add it to your toolkit to directly attack CSRF logins at a rapidfire rate, no proxy or long wait required. 
 
-It also handles huge wordlists well, loading 1gb+ password lists with no slowdown or long initial wait.
+It also handles huge wordlists well, loading 1gb+ password lists with no slowdown or long initial delay.
 ## Usage
 ```
 ./ettubrute <login_url> <csrf_htmlname> <wordlist> <postdata_nocsrf> <username> <errormsg>
