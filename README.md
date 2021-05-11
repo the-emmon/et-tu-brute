@@ -20,12 +20,14 @@ Check releases for compiled binaries. If you'd like to compile the tool yourself
 ```
 git clone https://github.com/the-emmon/et-tu-brute
 cd et-tu-brute
+nimble install docopt
 nim c --threads:on --opt:speed --app:console --gc:boehm -d:release ettubrute.nim
 ```
 #### WINDOWS (cross-compile)
 ```
 git clone https://github.com/the-emmon/et-tu-brute
 cd et-tu-brute
+nimble install docopt
 nim c --threads:on --opt:speed --app:console -d:mingw --cpu:i386 --gc:boehm -d:release ettubrute.nim
 ```
 Be sure to compile with the options listed to avoid glitches and "illegal filesystem access" crashes.
