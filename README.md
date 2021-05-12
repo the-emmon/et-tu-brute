@@ -7,7 +7,7 @@ Tested against a Proving Grounds machine with a CSRF-protected web portal, et-tu
 It also handles huge wordlists well, loading 1gb+ password lists with no slowdown or long initial delay.
 ## Usage
 ```
-./ettubrute <login_url> <csrf_htmlname> <wordlist> <postdata_nocsrf> <username> <errormsg>
+./ettubrute <login_url> <csrf_htmlname> <wordlist> <postdata_nocsrf> <username> <errormsg> [--speed <spd>]
 ```
 Here's an example with the values filled in:
 ```
